@@ -22,6 +22,16 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        layer-3 {
+            bindings = <&mo 3>;
+            key-positions = <45 42>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -54,10 +64,10 @@
 
         adjust_layer {
             bindings = <
-&none  &bootloader  &none  &none   &none  &none   &none      &bt BT_CLR         &none         &none  &none  &none  &bootloader  &none
-             &none  &none  &none   &none  &none   &none           &none         &none         &none  &none  &none        &none
-        &sys_reset  &none  &none   &none  &none   &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &none   &sys_reset
-                           &none  &trans  &none  &trans           &none         &none        &trans  &none
+&none  &bootloader  &none  &none         &none         &none         &none      &bt BT_CLR         &none         &none  &none  &none  &bootloader  &none
+             &none  &none  &none         &none         &none         &none           &none         &none         &none  &none  &none        &none
+        &sys_reset  &none  &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &none   &sys_reset
+                           &none        &trans         &none        &trans           &none         &none        &trans  &none
             >;
         };
     };
