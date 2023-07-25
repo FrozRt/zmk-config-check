@@ -25,9 +25,15 @@
     combos {
         compatible = "zmk,combos";
 
-        layer-3 {
+        layer-3-right {
             bindings = <&mo 3>;
             key-positions = <45 42>;
+            layers = <0>;
+        };
+
+        layer-3-left {
+            bindings = <&mo 3>;
+            key-positions = <38 41>;
             layers = <0>;
         };
     };
