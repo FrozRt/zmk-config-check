@@ -25,16 +25,10 @@
     combos {
         compatible = "zmk,combos";
 
-        layer-3-right {
-            bindings = <&mo 3>;
-            key-positions = <45 42>;
-            layers = <0>;
-        };
-
-        layer-3-left {
-            bindings = <&mo 3>;
-            key-positions = <38 41>;
-            layers = <0>;
+        layer-3-clear-bt {
+            bindings = <&bt BT_CLR>;
+            key-positions = <42 41>;
+            layers = <3>;
         };
     };
 
@@ -52,28 +46,28 @@
 
         lower_layer {
             bindings = <
-&none         &kp ESC  &none  &none         &none  &kp MINUS  &kp AMPS    &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9  &kp UNDERSCORE       &kp EQUAL         &kp LPAR  &kp RIGHT_PARENTHESIS
-       &kp LEFT_SHIFT  &none  &none         &none      &none     &none    &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6        &kp PLUS    &kp UP_ARROW        &kp MINUS
-            &kp LCTRL  &none  &none         &none      &none     &none    &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-                              &none  &kp LEFT_ALT      &none     &none    &kp NUMBER_0  &kp BACKSPACE  &kp RIGHT_ALT           &none
+&none         &kp ESC  &none  &none         &none  &kp MINUS       &kp AMPS    &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9  &kp UNDERSCORE       &kp EQUAL         &kp LPAR  &kp RIGHT_PARENTHESIS
+       &kp LEFT_SHIFT  &none  &none         &none      &none    &kp PAGE_UP    &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6        &kp PLUS    &kp UP_ARROW        &kp MINUS
+            &kp LCTRL  &none  &none         &none      &none  &kp PAGE_DOWN    &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+                              &none  &kp LEFT_ALT      &none          &none    &kp NUMBER_0  &kp BACKSPACE  &kp RIGHT_ALT           &none
             >;
         };
 
         raise_layer {
             bindings = <
-&kp TAB      &kp ESCAPE  &none  &none         &none  &none      &kp PG_UP    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &kp PRINTSCREEN
-         &kp LEFT_SHIFT  &none  &none         &none  &none  &kp PAGE_DOWN    &kp F4  &kp F5  &kp F6    &none    &none    &none
-              &kp LCTRL  &none  &none         &none  &none          &none    &kp F1  &kp F2  &kp F3    &none    &none  &kp INS
+&kp TAB      &kp ESCAPE  &none  &none         &none  &none          &none    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &kp PRINTSCREEN
+         &kp LEFT_SHIFT  &none  &none         &none  &none    &kp PAGE_UP    &kp F4  &kp F5  &kp F6    &none    &none    &none
+              &kp LCTRL  &none  &none         &none  &none  &kp PAGE_DOWN    &kp F1  &kp F2  &kp F3    &none    &none  &kp INS
                                 &none  &kp LEFT_ALT  &mo 3          &none     &none   &none   &none    &none
             >;
         };
 
         adjust_layer {
             bindings = <
-&none  &bootloader  &none  &none         &none         &none         &none      &bt BT_CLR         &none         &none  &none  &none  &bootloader  &none
-             &none  &none  &none         &none         &none         &none           &none         &none         &none  &none  &none        &none
-        &sys_reset  &none  &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &none   &sys_reset
-                           &none        &trans         &none        &trans           &none         &none        &trans  &none
+&none  &bootloader  &none  &none  &none  &none  &bt BT_SEL 0    &bt BT_SEL 1  &none  &none  &none  &none  &bootloader  &none
+             &none  &none  &none  &none  &none         &none           &none  &none  &none  &none  &none        &none
+        &sys_reset  &none  &none  &none  &none  &bt BT_SEL 2    &bt BT_SEL 2  &none  &none  &none  &none   &sys_reset
+                           &none  &none  &none         &none           &none  &none  &none  &none
             >;
         };
     };
