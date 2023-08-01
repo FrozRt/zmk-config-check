@@ -39,9 +39,21 @@ config ZMK_USB
 config ZMK_BATTERY_VOLTAGE_DIVIDER
 	default y
 
+config ZMK_SLEEP
+    bool "Enable deep sleep support"
+    imply USB
+
+if ZMK_SLEEP
+
+config PM_DEVICE
+    default y
+
 config ZMK_IDLE_SLEEP_TIMEOUT
     int "Milliseconds of inactivity before entering deep sleep"
     default 2400000
+
+#ZMK_SLEEP
+endif
 
 if USB
 
