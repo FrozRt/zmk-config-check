@@ -39,6 +39,18 @@ config ZMK_USB
 config ZMK_BATTERY_VOLTAGE_DIVIDER
 	default y
 
+if USB
+
+config USB_NRFX
+	default y
+
+config USB_DEVICE_STACK
+	default y
+
+endif # USB
+
+endif # BOARD_MRIYA_LEFT || BOARD_MRIYA_RIGHT
+
 config ZMK_SLEEP
     bool "Enable deep sleep support"
     imply USB
@@ -54,15 +66,3 @@ config ZMK_IDLE_SLEEP_TIMEOUT
 
 #ZMK_SLEEP
 endif
-
-if USB
-
-config USB_NRFX
-	default y
-
-config USB_DEVICE_STACK
-	default y
-
-endif # USB
-
-endif # BOARD_MRIYA_LEFT || BOARD_MRIYA_RIGHT
