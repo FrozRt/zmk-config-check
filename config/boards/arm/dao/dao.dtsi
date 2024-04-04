@@ -11,7 +11,7 @@
 
 
 / {
-	model = "dao";
+	model = "Dao";
 	compatible = "dao";
 
 	chosen {
@@ -23,8 +23,9 @@
 		zmk,battery = &vbatt;
 	};
 
+
 	default_transform: keymap_transform_0 {
-		compatible = "zmk,matrix-transform";
+  	compatible = "zmk,matrix-transform";
 		columns = <12>;
 		rows = <5>;
 
@@ -40,8 +41,7 @@
                                             RC(3,3) RC(3,4) RC(3,5)  RC(3,11) RC(3,10) RC(3,9)
 		>;
 	};
-
-	kscan0: kscan {
+    kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		label = "KSCAN";
 
@@ -51,18 +51,25 @@
 			, <&gpio0  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			, <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			, <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			;
+      , <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+		;
 	};
+
+    leds {
+        compatible = "gpio-leds";
+        blue_led: led_0 {
+            gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        };
+    };
 
 	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
 		label = "VBATT";
-		io-channels = <&adc 7>;
+		io-channels = <&adc 7>; 
 		output-ohms = <2000000>;
 		full-ohms = <(2000000 + 820000)>;
 	};
-
+	
 };
 
 
@@ -85,17 +92,6 @@
 &usbd {
 	status = "okay";
 };
-
-&uart0 {
-	compatible = "nordic,nrf-uarte";
-	status = "okay";
-	current-speed = <115200>;
-	tx-pin = <19>;
-	rx-pin = <21>;
-	rts-pin = <23>;
-	cts-pin = <25>;
-};
-
 
 &flash0 {
 	/*
