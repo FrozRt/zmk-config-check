@@ -67,19 +67,9 @@
             key-positions = <6 7 8>;
         };
 
-        LAYER4 {
-            bindings = <&sl 0>;
-            key-positions = <6 8>;
-        };
-
-        HomeCTRL {
-            bindings = <&kp LC(HOME)>;
-            key-positions = <2 4>;
-        };
-
-        EndCTRL {
-            bindings = <&kp LC(END)>;
-            key-positions = <2 4>;
+        BS {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <15 17>;
         };
     };
 
